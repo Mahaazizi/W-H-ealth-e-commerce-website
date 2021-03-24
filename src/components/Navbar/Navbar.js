@@ -30,8 +30,8 @@ function Navbar() {
         <div className='navbar-container'>
           <img
           src={logo}
-          hight= "30"
-          width="30"
+          hight= "50"
+          width="50"
           className="d-inline-block align-top"
           alt="React Bootstrap logo"
         />
