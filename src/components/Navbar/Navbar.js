@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '../Button/Button';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
-import Dropdown from '../Dropdown/Dropdown';
+import DropdownStore from '../Dropdown/DropdownStore';
+import DropdownServices from '../Dropdown/DropdownServices';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 
 
 
 function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-  const [dropdown, setDropdown] = useState(false);
+  const [dropdownstore, setDropdownstore] = useState(false);
+  const [dropdownservices, setDropdownservices] = useState(false);
 
 
   const handleClick = () => setClick(!click);
@@ -31,21 +34,32 @@ function Navbar() {
   window.addEventListener('resize', showButton);
 
 
-  const onMouseEnter = () => {
+  const onMouseEnterstore = () => {
     if (window.innerWidth < 960) {
-      setDropdown(false);
+      setDropdownstore(false) ;
     } else {
-      setDropdown(true);
+      setDropdownstore(true);
     }
   };
 
-  const onMouseLeave = () => {
+  const onMouseLeavestore = () => {
+    
+      setDropdownstore(false) ;
+    
+  };
+  
+  const onMouseEnterservice = () => {
     if (window.innerWidth < 960) {
-      setDropdown(false);
+      setDropdownservices(false) ;
     } else {
-      setDropdown(false);
+      setDropdownservices(true);
     }
   };
+
+  const onMouseLeaveservice = () => {
+    
+      setDropdownservices(false) ;};
+ 
 
   return (
     <>
@@ -55,68 +69,65 @@ function Navbar() {
           src={logo}
           hight= "50"
           width="50"
-          
           alt="site logo"
         />
   
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+          <Link  to='/' className='navbar-logo' onClick={closeMobileMenu}>
             Health is Wealth
-            
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-              <i class="fas fa-home"></i>
-              Home
-              </Link>
-            </li>
+           
 
 
             <li 
              className='nav-item'
-             onMouseEnter={onMouseEnter}
-             onMouseLeave={onMouseLeave}
+             onMouseEnter={onMouseEnterstore}
+             onMouseLeave={onMouseLeavestore}
              >
-              <Link
-                id="store"
-                to='/store'
+              <Link 
+                smooth to='#store'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                <i class="fas fa-store"></i> Store <i className='fas fa-caret-down' />
+                 Store <i className='fas fa-caret-down' />
               </Link>
-              {dropdown && <Dropdown />}
+              {dropdownstore && <DropdownStore />}
             </li>
             
             
             <li 
              className='nav-item'
-             
+             onMouseEnter={onMouseEnterservice}
+             onMouseLeave={onMouseLeaveservice}
              >
               <Link
-                id="service"
-                to='/services'
+                smooth to='#services'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-               <i class="fas fa-concierge-bell"></i> Services <i className='fas fa-caret-down' />
+               Services <i className='fas fa-caret-down' />
               </Link>
-              
+              {dropdownservices && <DropdownServices />}
             </li>
             <li className='nav-item' >
               <Link
-                to='/contact'
+
+                smooth to='#contact'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                <i class="fas fa-phone-volume"></i>Contact us
+                Contact us
               </Link>
             </li>
             
-
+            <li className='nav-item'>
+              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+              <ShoppingBasketIcon/>
+              </Link>
+            </li>
             <li>
               <Link
                 to='/sign-up'

@@ -3,7 +3,7 @@ import { CategoryItems } from './CategoryItems';
 import './Dropdown.css';
 import { Link } from 'react-router-dom';
 
-function Dropdown() {
+function DropdownStore() {
   const [click, setClick] = useState(false);
 
   const handleClick = () => setClick(!click);
@@ -32,4 +32,4 @@ function Dropdown() {
   );
 }
 
-export default Dropdown;
+export default DropdownStore;

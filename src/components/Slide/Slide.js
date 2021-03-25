@@ -6,7 +6,7 @@ import './Slide.css';
 function Slide() {
   return (
     
-    <div className='hero-container'>
+    <div className='hero-container' id='slide'>
    
       <video src='/videos/hw.mp4' autoPlay loop muted />
       

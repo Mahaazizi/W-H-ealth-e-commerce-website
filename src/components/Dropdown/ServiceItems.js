@@ -1,4 +1,4 @@
-export const ServicesItems = [
+export const ServiceItems = [
     {
       title: 'Specialist',
       path: '/bio',
