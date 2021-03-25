@@ -9,6 +9,7 @@ function Home() {
   return (
     <>
       <Slide />
+     
       <Footer/>
     </>
   );

@@ -16,7 +16,7 @@
 
   margin-bottom: 24px;
   padding: 24px;
-  color: #fff;
+  color: #f2e8cf;
 }
 
 .footer-subscription > p {
@@ -42,7 +42,7 @@
   border: none;
   font-size: 18px;
   margin-bottom: 16px;
-  border: 1px solid #fff;
+  border: 1px solid #f2e8cf;
 }
 
 .footer-links {
@@ -71,11 +71,11 @@
 }
 
 .footer-link-items > h2 {
-  color: #fff;
+  color: #f2e8cf;
 }
 
 .footer-link-items a {
-  color: #fff;
+  color: #f2e8cf;
   text-decoration: none;
   margin-bottom: 0.5rem;
 }
@@ -95,7 +95,7 @@
 
 /* Social Icons */
 .social-icon-link {
-  color: #fff;
+  color: #f2e8cf;
   font-size: 24px;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .social-logo {
-  color: #fff;
+  color: #f2e8cf;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
@@ -133,7 +133,7 @@
 }
 
 .website-rights {
-  color: #fff;
+  color: #f2e8cf;
   margin-bottom: 16px;
 }
 

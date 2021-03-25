@@ -65,7 +65,7 @@ function Footer() {
           <div class='footer-logo'>
             <Link to='/' className='social-logo'>
               Health is wealth
-              <i class='fab fa-typo3' />
+              <i class="fab fa-angellist"></i>
             </Link>
           </div>
           <small class='website-rights'>Health IS Wealth © 2021</small>
