@@ -1,17 +1,17 @@
 export const ServiceItems = [
     {
       title: 'Specialist',
-      path: '/bio',
+      path: '/Specialist',
       cName: 'dropdown-link'
     },
     {
       title: 'gym clubs',
-      path: '/proteine',
+      path: '/clubs',
       cName: 'dropdown-link'
     },
     {
       title: 'Recipes',
-      path: '/design',
+      path: '/recipes',
       cName: 'dropdown-link'
     },
   
