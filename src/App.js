@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/pages/Home';
-import Recipes from './components/pages/Recipes';
+import Recipe from './components/pages/Recipe';
 import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 
@@ -13,7 +13,7 @@ function App() {
     
     <Switch>
           <Route path='/' exact component={Home} />
-          <Route path='/Recipes' exact component={Recipes} />
+          <Route path='/Recipe' exact component={Recipe} />
           </Switch>
    <Footer/>
 

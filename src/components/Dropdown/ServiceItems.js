@@ -11,7 +11,7 @@ export const ServiceItems = [
     },
     {
       title: 'Recipes',
-      path: '/recipes',
+      path: '/recipe',
       cName: 'dropdown-link'
     },
   
