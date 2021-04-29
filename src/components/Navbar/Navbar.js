@@ -89,11 +89,11 @@ function Navbar() {
              onMouseLeave={onMouseLeavestore}
              >
               <Link 
-                smooth to='#store'
+                to='/Store'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                 Store <i className='fas fa-caret-down' />
+                 Store
               </Link>
               {dropdownstore && <DropdownStore />}
             </li>
@@ -109,7 +109,7 @@ function Navbar() {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-               Services <i className='fas fa-caret-down' />
+               Services
               </Link>
               {dropdownservices && <DropdownServices />}
             </li>

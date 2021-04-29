@@ -1,7 +1,8 @@
 import React from 'react';
 import './Section.css';
-import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+
 
 function Section({
   lightBg,
@@ -13,7 +14,8 @@ function Section({
   buttonLabel,
   img,
   alt,
-  imgStart
+  imgStart,
+  url
 }) {
   return (
     <>
@@ -43,10 +45,8 @@ function Section({
                 >
                   {description}
                 </p>
-                <Link to='/'>
-                  <Button buttonSize='btn--wide' buttonColor='blue'>
-                    {buttonLabel}
-                  </Button>
+                <Link to={url}>
+                <Button variant="outline-success" href={url}>{buttonLabel}</Button>{' '}
                 </Link>
               </div>
             </div>

@@ -9,7 +9,8 @@ export const ServiceObjOne = {
   buttonLabel: 'Contact NOW',
   imgStart: '',
   img: 'images/nutrition.jpg',
-  alt: 'nutritionist'
+  alt: 'nutritionist',
+  url:'/doc'
 };
 
 export const ServiceObjTwo = {
@@ -23,7 +24,8 @@ export const ServiceObjTwo = {
   buttonLabel: 'Start TODAY',
   imgStart: '',
   img: 'images/coach.jpg',
-  alt: 'sport'
+  alt: 'sport',
+  url:'/coach'
 };
 
 export const ServiceObjThree = {
@@ -37,6 +39,7 @@ export const ServiceObjThree = {
   buttonLabel: 'Prepare it NOW',
   imgStart: 'start',
   img: 'images/recette.jpg',
-  alt: 'Vault'
+  alt: 'Vault',
+  url:'/recipe'
 };
 

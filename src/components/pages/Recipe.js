@@ -3,6 +3,7 @@ import './Recipes.css';
 import Header from "../Recipes/Header";
 import Recipes from "../Recipes/Recipes";
 import Axios from "axios";
+import Footer from "../Footer/Footer";
 
 
 function Recipe() {
@@ -40,7 +41,9 @@ function Recipe() {
       <div className="container">
         <Recipes recipes={recipes} />
       </div>
+      <Footer/>
     </div>
+    
   );
 }
 
