@@ -1,21 +1,27 @@
 import React from "react";
+import logoo from '../../assets/logoo.png';
 
 const Header = props => {
   const { search, onInputChange, onSearchClick } = props;
   return (
     <div className="jumbotron">
-      <h1 className="display-1">
-        <i class="material-icons brand-icon"/> Food Recipe
-      </h1>
-      <div class="input-group w-50 mx-auto">
+      <div className="brand-icon">
+      <img className="display-1"
+          src={logoo}
+          hight= "50"
+          width="100"
+          alt="site logo"
+        />      </div>
+      <div className="input-group w-50 mx-auto">
+     
         <input
           type="text"
-          class="form-control"
+          className="form-control"
           placeholder="Search Your Recipe..."
           value={search}
           onChange={onInputChange}
         />
-        <div class="input-group-append">
+        <div className="input-group-append">
           <button className="btn btn-dark" onClick={onSearchClick}>
             Search Recipe
           </button>

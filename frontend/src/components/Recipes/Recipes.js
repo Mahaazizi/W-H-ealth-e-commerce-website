@@ -4,7 +4,7 @@ import RecipeItem from "./RecipeItem";
 const Recipes = props => {
   const { recipes } = props;
   return (
-    <div class="card-columns">
+    <div className="card-columns">
       {recipes.map(recipe => (
         <RecipeItem
           key={Math.random() * 100}
