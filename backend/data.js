@@ -6,7 +6,7 @@ const data = {
      category: 'BIO',
      image: '/images/products/produit 1.jpg',
      price: 17.500,
-     countInStock: 11,
+     countInStock: 0,
      brand: 'Santiveri',
      rating: 4.5,
      numReviews: 10,
