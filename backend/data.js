@@ -18,7 +18,7 @@ const data = {
    {
      name: 'Graines de Chia Bio',
      category: 'BIO',
-     image: '/images/products/produit 1.jpg',
+     image: '/images/products/produit1.jpg',
      price: 17.500,
      countInStock: 0,
      brand: 'Santiveri',
@@ -30,7 +30,7 @@ const data = {
      
      name: 'Flocons d’Avoine',
      category: 'PROTEINES',
-     image: '/images/products/produit 2.jpg',
+     image: '/images/products/produit2.jpg',
      price: 45.000,
      countInStock: 20,
      brand: ' impact sport nutrition',
@@ -41,7 +41,7 @@ const data = {
    {
      name: 'Galettes de Riz Intégral Bio',
      category: 'BIO',
-     image: '/images/products/produit 3.jpg',
+     image: '/images/products/produit3.jpg',
      price: 7.500,
      countInStock: 0,
      brand: 'Santiveri',
@@ -51,7 +51,7 @@ const data = {
    {
      name: 'Galettes de 6 Céréales Bio',
      category: 'BIO',
-     image: '/images/products/produit 4.jpg',
+     image: '/images/products/produit4.jpg',
      price: 9.200,
      countInStock: 15,
      brand: 'Santiveri',
@@ -62,7 +62,7 @@ const data = {
    {
      name: 'Crackers Blé Intégral',
      category: 'Sans Sucre',
-     image: '/images/products/produit 5.jpg',
+     image: '/images/products/produit5.jpg',
      price: 11.500,
      countInStock: 5,
      brand: 'MiSURA',
@@ -74,7 +74,7 @@ const data = {
      
      name: 'Farine Mix C Sans Gluten',
      category: 'SANS GLUTEN',
-     image: '/images/products/produit 6.jpg',
+     image: '/images/products/produit6.jpg',
      price: 15.900,
      countInStock: 12,
      brand: 'Schär',
@@ -85,7 +85,7 @@ const data = {
    {
     name: 'NutriMemo Oméga 3',
     category: 'HERBES & PLANTES',
-    image: '/images/products/produit 7.jpg',
+    image: '/images/products/produit7.jpg',
     price: 38.500,
     countInStock: 150,
     brand: 'NutriCeutik',
@@ -96,7 +96,7 @@ const data = {
   {
     name: 'Premium Whey',
     category: 'PROTEINES',
-    image: '/images/products/produit 8.jpg',
+    image: '/images/products/produit8.jpg',
     price: 145,
     countInStock: 120,
     brand: 'impact sport nutrition',
@@ -107,7 +107,7 @@ const data = {
   {
     name: 'Vinaigre de Cidre Bio',
     category: 'BIO',
-    image: '/images/products/produit 9.jpg',
+    image: '/images/products/produit9.jpg',
     price: 12.450,
     countInStock: 50,
     brand: 'Santiveri',
