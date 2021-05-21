@@ -14,3 +14,31 @@ code {
 #root {
   height: 100%;
 }
+.form {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.form > div {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+.form label {
+  margin: 1rem 0;
+  
+}
+.loading {
+  display: block !important;
+}
+/* Checkout Steps */
+.checkout-steps > div {
+  border-top: 0.3rem #39cf1b solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+.checkout-steps > div.active {
+  border-top-color: #BC4749;
+  color: #BC4749;
+}

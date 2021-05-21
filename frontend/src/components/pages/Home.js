@@ -5,6 +5,7 @@ import { ServiceObjOne, ServiceObjTwo, ServiceObjThree } from './data';
 import Section from '../Sections/Section';
 import Slide from '../Slide/Slide';
 import Footer from '../Footer/Footer';
+import Card from "../CardAcceuil/Card"
 
 
 function Home() {
@@ -15,7 +16,9 @@ function Home() {
       <Section {...ServiceObjThree} />
       
       <Section {...ServiceObjTwo} />
-      <Footer/>
+      <Card />
+      
+      
     </>
   );
 }
