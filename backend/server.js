@@ -2,8 +2,15 @@ import express from 'express';
 import mongoose from 'mongoose';
 import productRouter from './routers/productRouter.js';
 import userRouter from './routers/userRouter.js';
+import orderRouter from './routers/orderRouter.js';
+
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(process.env.MONGODB_URL || 'mongodb+srv://admin:admin123@cluster0.1ulgf.mongodb.net/w-h-ealth', {
   useNewUrlParser: true,
@@ -17,6 +24,8 @@ app.use(express.static('public'))
 app.use('/api/users', userRouter);
 
 app.use('/api/products', productRouter);
+
+app.use('/api/orders', orderRouter); 
 
 app.get('/', (req, res) => {
   res.send('Server is ready');

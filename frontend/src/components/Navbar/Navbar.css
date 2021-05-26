@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: 800px;
   max-width: 1500px;
 }
 
@@ -48,7 +48,6 @@
   justify-content: end;
   margin-right: 2rem;
 }
-
 .nav-item {
   height: 80px;
 }

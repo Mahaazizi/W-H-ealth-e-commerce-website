@@ -1,5 +1,10 @@
-const data = {
- products: [
+import img1 from "../../assets/images/products/produit 1.jpg"
+import img2 from "../../assets/images/products/produit 2.jpg"
+import img3 from "../../assets/images/products/produit 3.jpg"
+import img4 from "../../assets/images/products/produit 4.jpg"
+import img5 from "../../assets/images/products/produit 5.jpg"
+
+const product_card = [
    {
      _id: '1',
      name: 'Graines de Chia Bio',
@@ -28,7 +33,7 @@ const data = {
      _id: '3',
      name: 'Galettes de Riz Intégral Bio',
      category: 'BIO',
-     image: '/images/products/produit 3.jpg',
+     image: img3,
      price: 7.500,
      countInStock: 0,
      brand: 'Santiveri',
@@ -39,7 +44,7 @@ const data = {
      _id: '4',
      name: 'Galettes de 6 Céréales Bio',
      category: 'BIO',
-     image: '/images/products/produit 4.jpg',
+     image: img4,
      price: 9.200,
      countInStock: 15,
      brand: 'Santiveri',
@@ -51,7 +56,7 @@ const data = {
      _id: '5',
      name: 'Crackers Blé Intégral',
      category: 'Sans Sucre',
-     image: '/images/products/produit 5.jpg',
+     image: img5,
      price: 11.500,
      countInStock: 5,
      brand: 'MiSURA',
@@ -63,7 +68,7 @@ const data = {
      _id: '6',
      name: 'Farine Mix C Sans Gluten',
      category: 'SANS GLUTEN',
-     image: '/images/products/produit 6.jpg',
+     image: img1,
      price: 15.900,
      countInStock: 12,
      brand: 'Schär',
@@ -75,7 +80,7 @@ const data = {
     _id: '7',
     name: 'NutriMemo Oméga 3',
     category: 'HERBES & PLANTES',
-    image: '/images/products/produit 7.jpg',
+    image: img2,
     price: 38.500,
     countInStock: 150,
     brand: 'NutriCeutik',
@@ -87,7 +92,7 @@ const data = {
     _id: '8',
     name: 'Premium Whey',
     category: 'PROTEINES',
-    image: '/images/products/produit 8.jpg',
+    image: img1,
     price: 145,
     countInStock: 120,
     brand: 'impact sport nutrition',
@@ -99,7 +104,7 @@ const data = {
     _id: '9',
     name: 'Vinaigre de Cidre Bio',
     category: 'BIO',
-    image: '/images/products/produit 9.jpg',
+    image: img4,
     price: 12.450,
     countInStock: 50,
     brand: 'Santiveri',
@@ -107,6 +112,5 @@ const data = {
     numReviews: 15,
     description: 'Le vinaigre de cidre possède de nombreuses vertus thérapeutiques et bienfaits sur la santé. Il agit favorablement sur la digestion en renforçant la flore intestinale. Son contenu riche en sels minéraux et oligo-éléments en fait un excellent détoxificateur de l’organisme.',
   },
- ],
-};
-export default data;
+]
+export default product_card;
