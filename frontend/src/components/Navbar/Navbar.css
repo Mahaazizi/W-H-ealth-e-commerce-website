@@ -14,7 +14,7 @@
   z-index: 999;
 }
 
-/*.navbar-container {
+.navbar-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,7 +38,7 @@
   font-size: 1.8rem;
 }
 
-/*.nav-menu {
+.nav-menu {
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 10px;
@@ -47,8 +47,7 @@
   width: 60vw;
   justify-content: end;
   margin-right: 2rem;
-}*/
-
+}
 .nav-item {
   height: 80px;
 }

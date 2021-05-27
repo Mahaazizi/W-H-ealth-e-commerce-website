@@ -4,13 +4,12 @@ html {
 }
 body {
   margin: 20;
-  
+
   font-size: 1rem;
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   grid-area: main;
-  
 }
 
 /* Layout */
@@ -29,11 +28,11 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
+  padding: 0 2rem;
 }
 main {
   grid-area: main;
-  padding: 0rem 5rem 5rem 0rem;
-  
+  /* padding: 0rem 5rem 5rem 0rem; */
 }
 /*footer {
   grid-area: footer;
@@ -102,7 +101,7 @@ button.small {
 /* Header */
 header a {
   color: #f2e8cf;
-  padding: 3rem;
+  padding: 1rem;
 }
 
 .badge {
@@ -214,7 +213,6 @@ img.large {
   background-color: #f2e8cf;
   border-radius: 3rem;
   margin: 0.5rem;
-  
 }
 .card-body {
   padding: 1rem;
@@ -261,23 +259,25 @@ img.large {
   background-color: #f2e8cf;
 }
 /* Form */
-.form , .extra {
+.form,
+.extra {
   max-width: 60rem;
   margin: 0 auto;
 }
-.form , .extra > div {
+.form,
+.extra > div {
   display: flex;
   flex-direction: column;
   margin: 1rem;
 }
-.form , .extra label {
+.form,
+.extra label {
   margin: 1rem 0;
 }
 /* Dropdown */
 .dropdown {
   display: inline-block;
   position: relative;
-  
 }
 .navbar-container {
   display: flex;
@@ -505,22 +505,21 @@ img.large {
 }
 .form label {
   margin: 1rem 0;
-  
 }
 .loading {
   display: block !important;
 }
 /* Checkout Steps */
 .checkout-steps > div {
-  border-top: 0.3rem #F2E8CF solid;
-  color: #F2E8CF;
+  border-top: 0.3rem #f2e8cf solid;
+  color: #f2e8cf;
   flex: 1;
   padding: 1rem;
   font-weight: bold;
 }
 .checkout-steps > div.active {
-  border-top-color: #BC4749;
-  color: #BC4749;
+  border-top-color: #bc4749;
+  color: #bc4749;
 }
 button.small {
   font-size: 1.2rem;

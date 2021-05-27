@@ -56,6 +56,9 @@
 .darkBg {
   background-color: #37633f;
 }
+.lightBg {
+  background-color: #fff;
+}
 
 .home__hero-subtitle {
   max-width: 440px;

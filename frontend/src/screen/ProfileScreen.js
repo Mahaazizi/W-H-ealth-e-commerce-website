@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { detailsUser, updateUserProfile } from '../actions/userActions';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
-import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { detailsUser, updateUserProfile } from "../actions/userActions";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
+import { USER_UPDATE_PROFILE_RESET } from "../constants/userConstants";
 
 export default function ProfileScreen() {
-
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
@@ -36,13 +35,12 @@ export default function ProfileScreen() {
     e.preventDefault();
     // dispatch update profile
     if (password !== confirmPassword) {
-      alert('Password and Confirm Password Are Not Matched');
+      alert("Password and Confirm Password Are Not Matched");
     } else {
       dispatch(updateUserProfile({ userId: user._id, name, email, password }));
     }
   };
 
- 
   return (
     <div>
       <form className="form" onSubmit={submitHandler}>
@@ -55,7 +53,7 @@ export default function ProfileScreen() {
           <MessageBox variant="danger">{error}</MessageBox>
         ) : (
           <>
-          {loadingUpdate && <LoadingBox></LoadingBox>}
+            {loadingUpdate && <LoadingBox></LoadingBox>}
             {errorUpdate && (
               <MessageBox variant="danger">{errorUpdate}</MessageBox>
             )}
@@ -81,7 +79,6 @@ export default function ProfileScreen() {
                 type="email"
                 placeholder="Enter email"
                 value={user.email}
-                value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
@@ -111,7 +108,6 @@ export default function ProfileScreen() {
             </div>
           </>
         )}
-       
       </form>
     </div>
   );

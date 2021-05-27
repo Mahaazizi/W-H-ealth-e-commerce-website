@@ -1,18 +1,17 @@
-
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { signin } from '../actions/userActions';
-import LoadingBox from '../components/LoadingBox';
-import background from '../assets/login.jpg'
-import MessageBox from '../components/MessageBox';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { signin } from "../actions/userActions";
+import LoadingBox from "../components/LoadingBox";
+import background from "../assets/login.jpg";
+import MessageBox from "../components/MessageBox";
 export default function SigninScreen(props) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const redirect = props.location.search
-    ? props.location.search.split('=')[1]
-    : '/';
+    ? props.location.search.split("=")[1]
+    : "/";
 
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo, loading, error } = userSignin;
@@ -21,18 +20,23 @@ export default function SigninScreen(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(signin(email, password));
-};
-useEffect(() => {
-  if (userInfo) {
-    props.history.push(redirect);
-  }
-}, [props.history, redirect, userInfo]);
+  };
+  useEffect(() => {
+    if (userInfo) {
+      props.history.push(redirect);
+    }
+  }, [props.history, redirect, userInfo]);
   return (
-    <div >
-        
-        <img src={background} width="50%" height="50%" />
-     
-      <form className="form" onSubmit={submitHandler} style={{ position:"absolute", right:200, bottom:0}}>
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <img src={background} width="50%" alt="product" position="static" />
+
+      <form
+        className="form"
+        onSubmit={submitHandler}
+        style={{
+          width: "30%",
+        }}
+      >
         <div>
           <h1>Sign In</h1>
         </div>
@@ -67,7 +71,7 @@ useEffect(() => {
         <div>
           <label />
           <div>
-          New customer?{' '}
+            New customer?{" "}
             <Link to={`/register?redirect=${redirect}`}>
               Create your account
             </Link>

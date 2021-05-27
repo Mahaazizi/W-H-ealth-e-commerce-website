@@ -1,14 +1,14 @@
-import express from 'express';
-import expressAsyncHandler from 'express-async-handler';
-import data from '../data.js';
-import User from '../models/userModel.js';
-import bcrypt from 'bcryptjs';
-import { generateToken, isAuth } from '../utils.js';
+import express from "express";
+import expressAsyncHandler from "express-async-handler";
+import data from "../data.js";
+import User from "../models/userModel.js";
+import bcrypt from "bcryptjs";
+import { generateToken, isAuth } from "../utils.js";
 
 const userRouter = express.Router();
 
 userRouter.get(
-  '/seed',
+  "/seed",
   expressAsyncHandler(async (req, res) => {
     // await User.remove({});
     const createdUsers = await User.insertMany(data.users);
@@ -16,7 +16,7 @@ userRouter.get(
   })
 );
 userRouter.post(
-  '/signin',
+  "/signin",
   expressAsyncHandler(async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
@@ -31,18 +31,20 @@ userRouter.post(
         return;
       }
     }
-    res.status(401).send({ message: 'Invalid email or password !' });
+    res.status(401).send({ message: "Invalid email or password !" });
   })
 );
 userRouter.post(
-  '/register',
+  "/register",
   expressAsyncHandler(async (req, res) => {
+    console.log("req jdida", req.body);
     const user = new User({
       name: req.body.name,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 8),
-      height: req.body.height,
-      weight:req.body.weight,
+      healthy: req.body.healthy,
+      weight: req.body.weight,
+      proteine: req.body.proteine,
     });
     const createdUser = await user.save();
     res.send({
@@ -51,24 +53,25 @@ userRouter.post(
       email: createdUser.email,
       isAdmin: createdUser.isAdmin,
       token: generateToken(createdUser),
-      height:createdUser.height,
-      weight:createdUser.weight,
+      healthy: createdUser.healthy,
+      weight: createdUser.weight,
+      proteine: createdUser.proteine,
     });
   })
 );
 userRouter.get(
-  '/:id',
+  "/:id",
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.params.id);
     if (user) {
       res.send(user);
     } else {
-      res.status(404).send({ message: 'User Not Found' });
+      res.status(404).send({ message: "User Not Found" });
     }
   })
 );
 userRouter.put(
-  '/profile',
+  "/profile",
   isAuth,
   expressAsyncHandler(async (req, res) => {
     const user = await User.findById(req.user._id);
@@ -85,13 +88,9 @@ userRouter.put(
         email: updatedUser.email,
         isAdmin: updatedUser.isAdmin,
         token: generateToken(updatedUser),
-        height:updatedUser.height,
-        weight:updatedUser.weight,
       });
     }
   })
 );
-
-
 
 export default userRouter;

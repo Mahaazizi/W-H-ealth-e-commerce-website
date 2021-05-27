@@ -1,51 +1,83 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { register } from '../actions/userActions';
-import LoadingBox from '../components/LoadingBox';
-import MessageBox from '../components/MessageBox';
-import background from '../assets/singup.jpg'
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { register } from "../actions/userActions";
+import LoadingBox from "../components/LoadingBox";
+import MessageBox from "../components/MessageBox";
+import background from "../assets/singup.jpg";
 
 export default function RegisterScreen(props) {
-  
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [height, setHeight] = useState('');
-  const [weight, setWeight] = useState('');
-  const [isOpen, setIsOpen] = useState(false)
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [healthy, setHealthy] = useState("");
+  const [weight, setWeight] = useState("");
+  const [proteine, setProteine] = useState("");
+
+  const [confirmPassword, setConfirmPassword] = useState("");
+
   const redirect = props.location.search
-    ? props.location.search.split('=')[1]
-    : '/';
+    ? props.location.search.split("=")[1]
+    : "/";
 
   const userRegister = useSelector((state) => state.userRegister);
   const { userInfo, loading, error } = userRegister;
 
-  const [showResults, setShowResults] = React.useState(false)
-  const onClick = () => setShowResults(true)
+  const [showResults, setShowResults] = React.useState(false);
+  const onClick = () => setShowResults(true);
+
+  /*const onClickHealthy = () => {
+    healthy = document.getElementById("healthy").checked;
+  };
+  const onClickWeight = () => {
+    weight = document.getElementById("weight").checked;
+  };
+  const onClickProteine = () => {
+    proteine = document.getElementById("proteine").checked;
+  };*/
 
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      alert('Password and confirm password are not match');
+      alert("Password and confirm password are not match");
     } else {
-      dispatch(register(name, email, password));
+      let healthy = document.getElementById("healthy").checked;
+      let weight = document.getElementById("weight").checked;
+      let proteine = document.getElementById("proteine").checked;
+      console.log("healty", document.getElementById("healthy").checked);
+      console.log("weight", document.getElementById("weight").checked);
+      console.log("protine", document.getElementById("proteine").checked);
+      dispatch(register(name, email, password, healthy, weight, proteine));
     }
   };
-  
- 
+
   useEffect(() => {
     if (userInfo) {
       props.history.push(redirect);
     }
   }, [props.history, redirect, userInfo]);
   return (
-    <div style={{background:"#f8f9fa",height:"auto"}} >
-      <img src={background} width="50%" height="50%" />
-     
-     <form className="form" onSubmit={submitHandler} style={{ position:"sticky",width:"50%", right:0, bottom:-200}}>
+    <div
+      style={{
+        background: "#f8f9fa",
+        height: "auto",
+        display: "flex",
+        flexWrap: "wrap",
+      }}
+    >
+      <img src={background} width="60%" height="10%" alt="object" />
+
+      <form
+        className="form"
+        onSubmit={submitHandler}
+        style={{
+          right: 150,
+          bottom: 0,
+          width: "40%",
+          top: 120,
+        }}
+      >
         <div>
           <h1>Create Account</h1>
         </div>
@@ -91,58 +123,67 @@ export default function RegisterScreen(props) {
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>
         </div>
-        <label>do you want personalise your experience with us by answering more questions?</label>
-        <input type="checkbox"  onClick={onClick} />
-      { showResults ? <Results /> : null }
+        <div>
+          <label>
+            do you want personalise your experience with us by answering our
+            question?
+          </label>
+          <input type="checkbox" onClick={onClick} />
+          {showResults ? (
+            <div className="extra">
+              <div>
+                <label>You are more intersted in :</label>
+                <div>
+                  {" "}
+                  <input
+                    type="checkbox"
+                    value="healthy"
+                    id="healthy"
+                    onClick={(e) => setHealthy(e.target.checked)}
+                  />{" "}
+                  <label htmlFor="healthy">Eating healthy</label>
+                </div>
+                <div>
+                  {" "}
+                  <input
+                    type="checkbox"
+                    value="sugarfree"
+                    id="weight"
+                    onClick={(e) => setWeight(e.target.checked)}
+                  />{" "}
+                  <label htmlFor="weight">Losing weight</label>
+                </div>
+                <div>
+                  {" "}
+                  <input
+                    type="checkbox"
+                    value="proteins"
+                    id="proteine"
+                    onClick={(e) => setProteine(e.target.checked)}
+                  />{" "}
+                  <label htmlFor="proteine">Gaining musles</label>
+                </div>
+              </div>
+            </div>
+          ) : null}
+        </div>
+
         <div>
           <label />
-          
+
           <button className="primary" type="submit">
             Register
           </button>
         </div>
-        
+
         <div>
           <label />
           <div>
-            Already have an account?{' '}
+            Already have an account?{" "}
             <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
           </div>
         </div>
-        
       </form>
-   
     </div>
-
   );
 }
-const Results = () => (
-  <div  className="extra" >
-
-    <div>
-   
-          <label htmlFor="height">height</label>
-          <input
-            type="number"
-            id="height"
-            placeholder="Enter height"
-            
-            //onChange={(e) => setHeight(e.target.value)}
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="weight">weight</label>
-          <input
-            type="number"
-            id="weight"
-            placeholder="Enter weight"
-            
-            //onChange={(e) => setWeigth(e.target.value)}
-          ></input>
-          
-        </div>
-
-        
-  </div>
-)
-

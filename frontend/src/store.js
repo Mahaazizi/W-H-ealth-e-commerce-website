@@ -1,40 +1,38 @@
-import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
-import thunk from 'redux-thunk';
-import { cartReducer } from './reducers/cartReducers';
+import { createStore, compose, applyMiddleware, combineReducers } from "redux";
+import thunk from "redux-thunk";
+import { cartReducer } from "./reducers/cartReducers";
 import {
   productDetailsReducer,
   productListReducer,
   productCreateReducer,
   productUpdateReducer,
-} from './reducers/productReducers';
+} from "./reducers/productReducers";
 import {
   userRegisterReducer,
   userSigninReducer,
   userDetailsReducer,
   userUpdateProfileReducer,
-} from './reducers/userReducers';
+} from "./reducers/userReducers";
 import {
   orderCreateReducer,
   orderDetailsReducer,
   orderMineListReducer,
-  
-} from './reducers/orderReducers';
-
+} from "./reducers/orderReducers";
 
 const initialState = {
   userSignin: {
-    userInfo: localStorage.getItem('userInfo')
-      ? JSON.parse(localStorage.getItem('userInfo'))
+    userInfo: localStorage.getItem("userInfo")
+      ? JSON.parse(localStorage.getItem("userInfo"))
       : null,
   },
   cart: {
-    cartItems: localStorage.getItem('cartItems')
-      ? JSON.parse(localStorage.getItem('cartItems'))
+    cartItems: localStorage.getItem("cartItems")
+      ? JSON.parse(localStorage.getItem("cartItems"))
       : [],
-      shippingAddress: localStorage.getItem('shippingAddress')
-      ? JSON.parse(localStorage.getItem('shippingAddress'))
+    shippingAddress: localStorage.getItem("shippingAddress")
+      ? JSON.parse(localStorage.getItem("shippingAddress"))
       : {},
-      paymentMethod: 'PayPal',
+    paymentMethod: "PayPal",
   },
 };
 const reducer = combineReducers({
@@ -49,7 +47,7 @@ const reducer = combineReducers({
   userDetails: userDetailsReducer,
   userUpdateProfile: userUpdateProfileReducer,
   productCreate: productCreateReducer,
-  productUpdate: productUpdateReducer, 
+  productUpdate: productUpdateReducer,
 });
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(

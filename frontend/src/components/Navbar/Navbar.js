@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+/*import React, { useState, useEffect } from 'react';
 import { Button } from '../Button/Button';
 import './Navbar.css';
 import { signout } from '../../actions/userActions';
@@ -76,7 +76,7 @@ function Navbar() {
  
 
   return (
-    /*
+    
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
@@ -190,7 +190,7 @@ function Navbar() {
         
       </nav>
       <Route path="/cart/:id?" component={CartScreen}></Route>
-    </>*/
+    </>
     
         <div className="grid-container">
         <header className="row">
@@ -280,4 +280,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar;*/
