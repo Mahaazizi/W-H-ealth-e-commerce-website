@@ -7,7 +7,14 @@
   align-items: center;
   margin-top: 24px;
 }
-
+.input-areas form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.input-areas button {
+  margin-top: -18px;
+}
 .footer-subscription {
   display: flex;
   flex-direction: column;

@@ -15,6 +15,7 @@ function Section({
   alt,
   imgStart,
   url,
+  bgWhite,
 }) {
   return (
     <>
@@ -22,7 +23,10 @@ function Section({
         id="services"
         className={lightBg ? "home__hero-section" : "home__hero-section darkBg"}
       >
-        <div className="container">
+        <div
+          className="container"
+          style={bgWhite && { backgroundColor: "white" }}
+        >
           <div
             className="row home__hero-row"
             style={{

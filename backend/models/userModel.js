@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
@@ -6,12 +6,13 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     isAdmin: { type: Boolean, default: false, required: true },
-    height:{ type: Number, required: false },
-    weight:{ type: Number, required: false },
+    healthy: { type: Boolean },
+    weight: { type: Boolean },
+    proteine: { type: Boolean },
   },
   {
     timestamps: true,
   }
 );
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model("User", userSchema);
 export default User;

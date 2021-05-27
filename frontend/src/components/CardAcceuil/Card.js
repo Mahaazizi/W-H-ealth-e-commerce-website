@@ -18,6 +18,10 @@ const MainContent = () => {
       </div>
     </div>
   ));
-  return <div className="main_content">{listItems}</div>;
+  return (
+    <div className="main_content" style={{ alignItems: "stretch" }}>
+      {listItems}
+    </div>
+  );
 };
 export default MainContent;

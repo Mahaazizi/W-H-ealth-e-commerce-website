@@ -10,7 +10,7 @@ function Home() {
     <>
       <Slide />
       <Section {...ServiceObjOne} />
-      <Section {...ServiceObjThree} />
+      <Section bgWhite {...ServiceObjThree} />
       <Section {...ServiceObjTwo} />
       <Card />
     </>

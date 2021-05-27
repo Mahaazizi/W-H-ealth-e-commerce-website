@@ -27,13 +27,15 @@ export default function SigninScreen(props) {
     }
   }, [props.history, redirect, userInfo]);
   return (
-    <div>
-      <img src={background} width="50%" height="50%" alt="product" />
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
+      <img src={background} width="50%" alt="product" position="static" />
 
       <form
         className="form"
         onSubmit={submitHandler}
-        style={{ position: "absolute", right: 200, bottom: 0 }}
+        style={{
+          width: "30%",
+        }}
       >
         <div>
           <h1>Sign In</h1>
