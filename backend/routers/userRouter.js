@@ -21,13 +21,9 @@ userRouter.post(
     const user = await User.findOne({ email: req.body.email });
     if (user) {
       if (bcrypt.compareSync(req.body.password, user.password)) {
-        res.send({
-          _id: user._id,
-          name: user.name,
-          email: user.email,
-          isAdmin: user.isAdmin,
-          token: generateToken(user),
-        });
+        let user1 = user.toObject();
+        user1.token = generateToken(user);
+        res.send(user1);
         return;
       }
     }

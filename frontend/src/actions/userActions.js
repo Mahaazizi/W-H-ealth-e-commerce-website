@@ -57,9 +57,11 @@ export const signin = (email, password) => async (dispatch) => {
   }
 };
 export const signout = () => (dispatch) => {
+  console.log("h*ke******");
   localStorage.removeItem("userInfo");
   localStorage.removeItem("cartItems");
   localStorage.removeItem("shippingAddress");
+  window.location.reload();
   dispatch({ type: USER_SIGNOUT });
 };
 

@@ -4,8 +4,7 @@ import Rating from "../components/store/Rating";
 import { detailsProduct } from "../actions/productActions";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-
-import Recipes from "../components/Recipes/Recipes";
+import Slider from "../components/Slide/slider";
 import Axios from "axios";
 
 export default function ProductScreen(props) {
@@ -133,9 +132,8 @@ export default function ProductScreen(props) {
           </div>
         </div>
       )}
-      <div className="container">
-        <Recipes recipes={recipes} />
-      </div>
+
+      <Slider recipes={recipes} />
     </div>
   );
 }
