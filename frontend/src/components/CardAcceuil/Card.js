@@ -1,8 +1,24 @@
-import React from "react";
-import product_card from "../store/data";
+import React , { useEffect, useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import { createProduct, listProducts } from '../../actions/productActions';
+import { detailsUser, updateUserProfile } from '../../actions/userActions';
+import { detailsProduct } from "../../actions/productActions";
 
-const MainContent = () => {
-  const listItems = product_card.map((item) => (
+const MainContent = (props) => {
+ 
+  const productList = useSelector((state) => state.productList);
+  const { loading, error, products } = productList;
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const userDetails = useSelector((state) => state.userDetails);
+  const { user } = userDetails;
+console.log(userInfo)
+  const [qty, setQty] = useState(1);
+
+  const dispatch = useDispatch();
+  
+ 
+  const listItems = products.map((item) => (
     <div className="card" key={item.id}>
       <div className="card_img">
         <img src={item.image} alt="product"></img>
