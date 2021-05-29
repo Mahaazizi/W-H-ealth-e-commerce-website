@@ -27,6 +27,8 @@ userRouter.post(
           email: user.email,
           isAdmin: user.isAdmin,
           token: generateToken(user),
+          weight: user.weight,
+          
         });
         return;
       }
@@ -88,6 +90,7 @@ userRouter.put(
         email: updatedUser.email,
         isAdmin: updatedUser.isAdmin,
         token: generateToken(updatedUser),
+        
       });
     }
   })

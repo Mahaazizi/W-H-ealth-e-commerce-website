@@ -6,7 +6,10 @@ import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import background from "../assets/singup.jpg";
 
+
 export default function RegisterScreen(props) {
+
+  
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -51,12 +54,16 @@ export default function RegisterScreen(props) {
       dispatch(register(name, email, password, healthy, weight, proteine));
     }
   };
+  
 
   useEffect(() => {
     if (userInfo) {
       props.history.push(redirect);
     }
   }, [props.history, redirect, userInfo]);
+
+
+  
   return (
     <div
       style={{
@@ -136,9 +143,10 @@ export default function RegisterScreen(props) {
                 <div>
                   {" "}
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="healthy"
                     id="healthy"
+                    name="choise"
                     onClick={(e) => setHealthy(e.target.checked)}
                   />{" "}
                   <label htmlFor="healthy">Eating healthy</label>
@@ -146,9 +154,10 @@ export default function RegisterScreen(props) {
                 <div>
                   {" "}
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="sugarfree"
                     id="weight"
+                    name="choise"
                     onClick={(e) => setWeight(e.target.checked)}
                   />{" "}
                   <label htmlFor="weight">Losing weight</label>
@@ -156,9 +165,10 @@ export default function RegisterScreen(props) {
                 <div>
                   {" "}
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="proteins"
                     id="proteine"
+                    name="choise"
                     onClick={(e) => setProteine(e.target.checked)}
                   />{" "}
                   <label htmlFor="proteine">Gaining musles</label>

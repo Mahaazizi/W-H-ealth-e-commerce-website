@@ -7,11 +7,15 @@ import orderRouter from "./routers/orderRouter.js";
 import dotenv from "dotenv";
 
 dotenv.config();
+import cors from "cors";
+
+
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use(cors())
 mongoose.connect(
   process.env.MONGODB_URL ||
     "mongodb+srv://admin:admin123@cluster0.1ulgf.mongodb.net/w-h-ealth",
