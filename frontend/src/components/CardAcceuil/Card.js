@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React , { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import Axios from "axios";
@@ -41,13 +42,23 @@ const MainContent = (props) => {
  
  
    const listItems = product.map((item) => (
+=======
+import React from "react";
+import { useSelector } from "react-redux";
+
+const MainContent = (props) => {
+  const productList = useSelector((state) => state.productList);
+  const { products } = productList;
+
+  const listItems = products.map((item) => (
+>>>>>>> 45b16cfdef9da7495ecff9800682be7f5d23d930
     <div className="card" key={item.id}>
       <div className="card_img">
         <img src={item.image} alt="product"></img>
       </div>
       <div className="card_header">
         <h2>{item.name} </h2>
-        <p className="description">{item.description}</p>
+        <p className="brand">{item.brand}</p>
         <p className="price">
           {item.price}
           <span>TND</span>

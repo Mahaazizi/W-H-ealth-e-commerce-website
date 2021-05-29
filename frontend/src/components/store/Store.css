@@ -1,11 +1,9 @@
 html {
-  font-size: 100%; /* 16px x 62.5 = 10px = 1rem */
+  font-size: 100%;
   box-sizing: border-box;
 }
 body {
-  margin: 20;
-
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,6 +19,8 @@ header {
     rgb(56, 102, 65) 100%
   );
   height: 80px;
+  width: 101.12%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,7 +107,7 @@ header a {
 .badge {
   background-color: #bc4749;
   color: #f2e8cf;
-  border-radius: 50%;
+  border-radius: 25%;
   padding: 0.2rem 0.7rem;
   font-size: 1.4rem;
   margin-left: 0.2rem;
@@ -116,17 +116,8 @@ header a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
 }
-.row.center {
-  justify-content: center;
-}
-.row.top {
-  align-items: flex-start;
-}
-.row.start {
-  justify-content: flex-start;
-}
+
 .col-1 {
   flex: 1 1 30rem;
 }
@@ -211,17 +202,17 @@ img.large {
 .card {
   border: 0.1rem #f2e8cf solid;
   background-color: #f2e8cf;
-  border-radius: 3rem;
+  border-radius: 2rem;
   margin: 0.5rem;
 }
 .card-body {
-  padding: 1rem;
+  padding: 2rem;
 }
 .card-body > * {
   margin-bottom: 1rem;
 }
 .price {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 /* Rating */
 .rating span {
