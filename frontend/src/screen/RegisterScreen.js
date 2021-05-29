@@ -10,9 +10,9 @@ export default function RegisterScreen(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [healthy, setHealthy] = useState("");
-  const [weight, setWeight] = useState("");
-  const [proteine, setProteine] = useState("");
+  let [healthy, setHealthy] = useState("");
+  let [weight, setWeight] = useState("");
+  let [proteine, setProteine] = useState("");
 
   const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -26,28 +26,16 @@ export default function RegisterScreen(props) {
   const [showResults, setShowResults] = React.useState(false);
   const onClick = () => setShowResults(true);
 
-  /*const onClickHealthy = () => {
-    healthy = document.getElementById("healthy").checked;
-  };
-  const onClickWeight = () => {
-    weight = document.getElementById("weight").checked;
-  };
-  const onClickProteine = () => {
-    proteine = document.getElementById("proteine").checked;
-  };*/
-
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       alert("Password and confirm password are not match");
     } else {
-      let healthy = document.getElementById("healthy").checked;
-      let weight = document.getElementById("weight").checked;
-      let proteine = document.getElementById("proteine").checked;
-      console.log("healty", document.getElementById("healthy").checked);
-      console.log("weight", document.getElementById("weight").checked);
-      console.log("protine", document.getElementById("proteine").checked);
+      healthy = document.getElementById("healthy").checked;
+      weight = document.getElementById("weight").checked;
+      proteine = document.getElementById("proteine").checked;
+
       dispatch(register(name, email, password, healthy, weight, proteine));
     }
   };

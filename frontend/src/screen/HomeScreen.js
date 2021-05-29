@@ -16,7 +16,7 @@ export default function HomeScreen() {
     axios
       .get("http://localhost:5000/api/products")
       .then((res) => console.log("res", res.data))
-      .catch((err) => console.error(err));
+      .catch((err) => console.error("tore err", err));
     dispatch(listProducts());
   }, [dispatch]);
   return (

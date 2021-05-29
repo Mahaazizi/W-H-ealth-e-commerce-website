@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Link, Route } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 import HomeScreen from "../../screen/HomeScreen";
 import ProductScreen from "../../screen/ProductScreen";
 import CartScreen from "../../screen/CartScreen";
@@ -11,7 +11,6 @@ import { useDispatch } from "react-redux";
 import "./Store.css";
 
 function Shop() {
-  const [click, setClick] = useState(false);
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const userSignin = useSelector((state) => state.userSignin);
@@ -20,8 +19,6 @@ function Shop() {
   const signoutHandler = () => {
     dispatch(signout());
   };
-
-  const handleClick = () => setClick(!click);
 
   return (
     <div className="grid-container">
@@ -41,16 +38,19 @@ function Shop() {
         </div>
         <div>
           <Link className="brand" to="/Store">
-            Shop Now
+            <i class="fas fa-store"></i>
+            Store
           </Link>
         </div>
         <div>
           <Link className="brand" to="/Recipe">
+            <i class="fas fa-utensils"></i>
             Recipes
           </Link>
         </div>
 
         <Link to="/cart">
+          <i class="fas fa-shopping-cart"></i>
           Cart
           {cartItems.length > 0 && (
             <span className="badge">{cartItems.length}</span>
@@ -59,8 +59,10 @@ function Shop() {
         {userInfo ? (
           <div className="dropdown">
             <Link to="#">
+              <i className="fas fa-user-check"></i>
               {userInfo.name} <i className="fa fa-caret-down"></i>{" "}
             </Link>
+
             <ul className="dropdown-content">
               <li>
                 <Link to="/profile">User Profile</Link>
@@ -69,18 +71,23 @@ function Shop() {
                 <Link to="/orderhistory">Order History</Link>
               </li>
               <li>
-                <Link to="/signout" onClick={signoutHandler}>
+                <Link to="/" onClick={signoutHandler}>
+                  <i className="fas fa-sign-out-alt"></i>
                   Sign Out
                 </Link>
               </li>
             </ul>
           </div>
         ) : (
-          <Link to="/signin">Sign In</Link>
+          <div>
+            <Link to="/signin">Sign In</Link>
+            <i className="fas fa-sign-in-alt"></i>
+          </div>
         )}
         {userInfo && userInfo.isAdmin && (
           <div className="dropdown">
             <Link to="#admin">
+              <i className="fas fa-user-cog"></i>
               Admin <i className="fa fa-caret-down"></i>
             </Link>
             <ul className="dropdown-content">
@@ -103,7 +110,6 @@ function Shop() {
       <main>
         <Route path="/cart/:id?" component={CartScreen}></Route>
         <Route path="/product/:id" component={ProductScreen} exact></Route>
-
         <Route path="/Store" component={HomeScreen} exact></Route>
       </main>
     </div>
